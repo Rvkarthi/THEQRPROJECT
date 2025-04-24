@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.listen(process.env.PORT, async () => {
     try {
       await connectDb();
-      console.log(`✅ Server running on http://localhost:${PORT}`);
+      console.log(`✅ Server running on http://localhost:${process.env.PORT}`);
     } catch (err) {
       console.error('❌ Database connection failed:', err.message);
     }
