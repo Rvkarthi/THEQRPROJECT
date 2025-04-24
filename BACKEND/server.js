@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 import userRouter from './router/user.router.js';
 import connectDb from './library/connection.js';
 
@@ -19,9 +21,11 @@ app.get('/', (req, res) => {
 });
 
 // Server
-app.listen(5000, () => {
-    if(connectDb())
-    {
-        console.log("Server is running at http://localhost:5000");
-    }    
-});
+app.listen(process.env.PORT, async () => {
+    try {
+      await connectDb();
+      console.log(`✅ Server running on http://localhost:${PORT}`);
+    } catch (err) {
+      console.error('❌ Database connection failed:', err.message);
+    }
+  });
