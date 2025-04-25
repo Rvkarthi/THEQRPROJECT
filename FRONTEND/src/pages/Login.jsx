@@ -16,7 +16,8 @@ const Login = () => {
   }
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    var { name, value } = e.target;
+    value = value.toLowerCase()
     setFormData(prevState => ({
       ...prevState,
       [name]: value
