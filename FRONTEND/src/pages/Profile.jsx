@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const Profile = () => {
   const { username } = useParams();
@@ -38,29 +39,35 @@ const Profile = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
-        <div className="text-white text-xl">Loading profile...</div>
+      <div className="min-h-screen flex flex-col bg-gray-900">
+        <div className="flex-grow flex items-center justify-center">
+          <div className="text-white text-xl">Loading profile...</div>
+        </div>
+        <Footer />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
-        <div className="text-red-500 text-xl">{error}</div>
+      <div className="min-h-screen flex flex-col bg-gray-900">
+        <div className="flex-grow flex items-center justify-center">
+          <div className="text-red-500 text-xl">{error}</div>
+        </div>
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-gray-900">
       {/* Header */}
       <div className='bg-slate-800 w-full h-20 py-15 flex justify-between items-center px-5 shadow-lg'>
         <h1 className='text-white text-2xl font-bold'>User Profile</h1>
       </div>
 
       {/* Main Content */}
-      <div className="w-[95%] md:w-[80%] lg:w-[60%] mx-auto mt-10">
+      <div className="flex-grow w-[95%] md:w-[80%] lg:w-[60%] mx-auto mt-10 mb-10">
         <div className="bg-slate-800 rounded-lg shadow-xl p-8">
           <div className="flex flex-col items-center space-y-6">
             {/* Profile Header */}
@@ -104,6 +111,8 @@ const Profile = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

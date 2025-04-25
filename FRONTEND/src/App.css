@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.app-container {
+  min-height: 100vh;
+  padding-bottom: 4rem; /* Add padding to prevent content from being hidden behind the footer */
+  position: relative;
+}

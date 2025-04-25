@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const [userData, setUserData] = useState(null);
@@ -57,15 +58,22 @@ const Home = () => {
     return profileUrl;
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+    window.location.href = '/login';
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900 flex flex-col">
       {/* Header */}
       <div className='bg-slate-800 w-full h-20 py-15 flex justify-between items-center px-5 shadow-lg'>
         <h1 className='text-white text-2xl font-bold'>Profile QR</h1>
+        <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={handleLogout}>Logout</button>
       </div>
 
       {/* Main Content */}
-      <div className="w-[95%] md:w-[80%] lg:w-[60%] mx-auto mt-10">
+      <div className="flex-grow w-[95%] md:w-[80%] lg:w-[60%] mx-auto mt-10 mb-10">
         <div className="bg-slate-800 rounded-lg shadow-xl p-8">
           {loading ? (
             <div className="flex justify-center items-center h-64">
@@ -110,6 +118,8 @@ const Home = () => {
           )}
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
