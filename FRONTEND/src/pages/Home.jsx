@@ -67,9 +67,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col">
       {/* Header */}
-      <div className='bg-slate-800 w-full h-20 py-15 flex justify-between items-center px-5 shadow-lg'>
-        <h1 className='text-white text-2xl font-bold'>Profile QR</h1>
-        <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={handleLogout}>Logout</button>
+      <div className='bg-slate-800 w-full h-auto py-15 flex flex-col justify-between items-center px-5 shadow-lg'>
+        <div className="flex justify-between items-center w-full h-20">
+          <h1 className='text-white text-2xl font-bold'>Profile QR</h1>
+          <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={handleLogout}>Logout</button>
+        </div>
+        
       </div>
 
       {/* Main Content */}
@@ -116,6 +119,9 @@ const Home = () => {
               </div>
             </div>
           )}
+        </div>
+      <div className="text-center py-3">
+          <p className="text-slate-400/30 text-lg font-medium italic">Replacing traditional visiting cards</p>
         </div>
       </div>
 
