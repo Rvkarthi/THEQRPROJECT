@@ -53,7 +53,8 @@ const Signup = () => {
                 <form onSubmit={handleSubmit}>
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="name">Username</label>
-                        <input onChange={(e)=>setName((e.target.value).toLowerCase())} minLength={8} required className='w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="text" id="name" name="name" placeholder='must have 8 character'/>
+                        {/* {username.length<8 && <p className='text-sm text-red-400 font-mono hidden peer-aria-selected:display'>min 8 character</p>}  */}
+                        <input onChange={(e)=>setName((e.target.value).toLowerCase())} minLength={8} required className='peer w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="text" id="name" name="name" placeholder='must have 8 character'/>
                     </div>
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="password">Password</label>
@@ -74,7 +75,7 @@ const Signup = () => {
                     <div className='flex flex-col items-center justify-center gap-5 mt-10'>
                     <button className='h-[6vh] p-3 bg-indigo-600 hover:bg-indigo-700  rounded-lg text-slate-100 font-semibold' type="submit">Signup</button>
     
-                    <Link to="/login" className='h-[6vh] p-3 rounded-lg text-slate-200 font-semibold' type="button">already having a account, <span className='bg-gradient-to-r from-indigo-400 to-indigo-500 text-transparent bg-clip-text border-b text-xl font-bold'>LOGIN</span></Link>
+                    <Link to="/login" className='h-[6vh] p-3 rounded-lg text-slate-200 font-semibold' type="button">already having a account, <span className='text-white underline text-xl font-bold'>LOGIN</span></Link>
                     </div>
                     
                 </form>
