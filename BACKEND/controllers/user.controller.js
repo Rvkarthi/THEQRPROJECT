@@ -24,28 +24,27 @@ export const getUserByName = async (req, res)=>{
     }
 
 }
-
-export const login = async (req, res)=>{
-
+export const login = async (req, res) => {
     try {
         const body = req.body;
-        const details = await users.findOne({"username": body.username})
-        if(!details){
-            res.status(400).json({"data": "username invalid", success: false}) 
+        const details = await users.findOne({ "username": body.username });
+        if (!details) {
+            return res.status(400).json({ message: "username invalid", success: false });
         }
-        const isMatch = bcrypt.compare(body.password, details.password)
-        if(!isMatch){
-            res.status(200).json({data: "password invalid", success: false})
+
+        const isMatch = await bcrypt.compare(body.password, details.password);
+        if (!isMatch) {
+            return res.status(200).json({ message: "password invalid", success: false });
         }
-        else{
-            res.status(200).json({data: details, success: true})
-        }
+
+        return res.status(200).json({ data: details,message: "password invalid", success: true });
 
     } catch (error) {
-        res.status(400).json({"error": error, "message": "not found"})
+        return res.status(400).json({ error: error.message, message: "not found" });
     }
+};
 
-}
+
 
 export const createUser = async (req,res)=> {
     try {
