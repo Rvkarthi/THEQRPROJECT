@@ -65,12 +65,12 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col">
+    <div className="min-h-screen bg-slate-900   flex flex-col">
       {/* Header */}
       <div className='bg-slate-800 w-full h-auto py-15 flex flex-col justify-between items-center px-5 shadow-lg'>
         <div className="flex justify-between items-center w-full h-20">
           <h1 className='text-white text-2xl font-bold'>Profile QR</h1>
-          <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={handleLogout}>Logout</button>
+          <button className='bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md' onClick={handleLogout}>Logout</button>
         </div>
         
       </div>
@@ -90,8 +90,9 @@ const Home = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               {/* QR Code Section */}
               <div className="flex-1 flex flex-col items-center">
-                <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="bg-white p-4 rounded-lg shadow-md relative hover:-top-2 hover:shadow-lg transition-transform duration-300 ease-in-out">
                   <QRCodeSVG
+                    
                     value={generateQRData()}
                     size={200}
                     level="H"

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-slate-800 w-full py-4 mt-auto">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        <p className="text-gray-300">© 2024 karthikrishna</p>
+        <a href='https://karthikrishna.vercel.app/' className="text-gray-300">© 2024 karthikrishna</a>
         <div className="flex gap-4">
           <a 
             href="https://www.linkedin.com/in/karthikrishnaofficial" 

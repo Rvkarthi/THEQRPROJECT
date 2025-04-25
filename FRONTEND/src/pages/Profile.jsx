@@ -102,7 +102,7 @@ const Profile = () => {
                 Follow on Instagram
               </a>
                         <a
-            href="mailto:karthikrishna465@gmail.com"
+            href={`mailto:/${userData?.email}`}
             className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
           >
             Send Email

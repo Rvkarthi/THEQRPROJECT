@@ -4,6 +4,10 @@ import Footer from '../components/Footer'
 
 const Signup = () => {
 
+    if(localStorage.getItem('username') && localStorage.getItem('password')){
+        window.location.href = '/home'
+      }
+
     const [username, setName] = useState('')
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
