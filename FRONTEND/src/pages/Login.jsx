@@ -41,8 +41,8 @@ const Login = () => {
         localStorage.setItem('password', formData.password)
         window.location.href = '/home'
       } 
-      var a = data.data
-      if(!data.success)
+      var a = data.message
+      if(data.success===false)
           alert(a);
           setIsLoading(false)
       console.log(data.data)

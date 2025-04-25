@@ -69,7 +69,7 @@ const Signup = () => {
                     </div>
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="email">Email</label>
-                        <input onChange={(e)=>setEmail((e.target.value).toLowerCase())} className='w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="email" id="email" name="email" placeholder='eg., alice@gmail.com'/>
+                        <input onChange={(e)=>setEmail((e.target.value).toLowerCase())} className='w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="email" id="email" name="email" placeholder='eg., alice@gmail.com' required/>
                     </div>
                     <div className='flex flex-col items-center justify-center gap-5 mt-10'>
                     <button className='h-[6vh] p-3 bg-indigo-600 hover:bg-indigo-700  rounded-lg text-slate-100 font-semibold' type="submit">Signup</button>
