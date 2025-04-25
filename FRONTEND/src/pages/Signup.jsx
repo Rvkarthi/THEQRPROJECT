@@ -54,15 +54,15 @@ const Signup = () => {
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="name">Username</label>
                         {/* {username.length<8 && <p className='text-sm text-red-400 font-mono hidden peer-aria-selected:display'>min 8 character</p>}  */}
-                        <input onChange={(e)=>setName((e.target.value).toLowerCase())} minLength={8} required className='peer w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="text" id="name" name="name" placeholder='must have 8 character'/>
+                        <input onChange={(e)=>setName((e.target.value).toLowerCase())} minLength={8} required className='invalid:text-red-400 text-slate-200 w-full h-[7vh] p-3 bg-slate-700 rounded-lg ' type="text" id="name" name="name" placeholder='must have 8 character'/>
                     </div>
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="password">Password</label>
-                        <input onChange={(e)=>setPassword((e.target.value).toLowerCase())} minLength={8} required className='w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="password" id="password1" name="password" placeholder='must have 8 character'/>
+                        <input onChange={(e)=>setPassword((e.target.value).toLowerCase())} minLength={8} required className='invalid:text-red-400 w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="password" id="password1" name="password" placeholder='must have 8 character'/>
                     </div>
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="password">Confirm Password</label>
-                        <input onChange={(e)=>setPassword2((e.target.value).toLowerCase())} minLength={8} required className='w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="password" id="password2" name="password" placeholder='must have 8 character'/>
+                        <input onChange={(e)=>setPassword2((e.target.value).toLowerCase())} minLength={8} required className='invalid:text-red-400 w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="password" id="password2" name="password" placeholder='must have 8 character'/>
                     </div>
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="instagramId">Instagram Id</label>
@@ -70,7 +70,7 @@ const Signup = () => {
                     </div>
                     <div className='my-5 flex flex-col md:flex-row justify-between flex-wrap'>
                         <label className='text-xl text-slate-300 font-semibold' htmlFor="email">Email</label>
-                        <input onChange={(e)=>setEmail((e.target.value).toLowerCase())} className='w-full h-[7vh] p-3 bg-slate-700 rounded-lg text-slate-200' type="email" id="email" name="email" placeholder='eg., alice@gmail.com' required/>
+                        <input onChange={(e)=>setEmail((e.target.value).toLowerCase())} className='w-full h-[7vh] p-3 invalid:text-red-400 bg-slate-700 rounded-lg text-slate-200' type="email" id="email" name="email" placeholder='eg., alice@gmail.com' required/>
                     </div>
                     <div className='flex flex-col items-center justify-center gap-5 mt-10'>
                     <button className='h-[6vh] p-3 bg-indigo-600 hover:bg-indigo-700  rounded-lg text-slate-100 font-semibold' type="submit">Signup</button>
