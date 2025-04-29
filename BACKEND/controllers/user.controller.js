@@ -49,6 +49,10 @@ export const login = async (req, res) => {
 export const createUser = async (req,res)=> {
     try {
         const body = req.body;
+        const existingUser = await users.findOne({ username:   body.username });
+        if (existingUser) {
+            return res.status(400).json({ message: "username already exists", success: false });
+        }
         const newUser = await users.create(body)
         res.status(201).json({message: "new user created", "body" : newUser, success: true})
     } catch (error) {

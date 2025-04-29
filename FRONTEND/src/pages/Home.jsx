@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import Footer from '../components/Footer';
 
+
 const Home = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -72,9 +73,10 @@ const Home = () => {
           <h1 className='text-white text-2xl font-bold'>Profile QR</h1>
           <button className='bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md' onClick={handleLogout}>Logout</button>
         </div>
+
         
       </div>
-
+        
       {/* Main Content */}
       <div className="flex-grow w-[95%] md:w-[80%] lg:w-[60%] mx-auto mt-10 mb-10">
         <div className="bg-slate-800 rounded-lg shadow-xl p-8">

@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import TrueFocus from '../components/TrueFocus';
 
 const Signup = () => {
 
@@ -51,7 +52,15 @@ const Signup = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-900">
         <div className="flex-grow">
-            <h1 className='text-3xl font-bold text-center text-white uppercase my-10'>signup</h1>
+            <h1 className='text-3xl font-bold text-center text-white uppercase my-10'>
+                <TrueFocus 
+sentence="CREATE QR & SHARE CONTACT"
+manualMode={false}
+blurAmount={5}
+borderColor="#4f47e6"
+animationDuration={1}
+pauseBetweenAnimations={0.5}
+/></h1>
 
             <div  className='w-[99%] md:w-1/2 mx-1 md:mx-auto bg-slate-800 p-5 md:p-10 rounded-lg mb-20' >
                 <form onSubmit={handleSubmit}>
